@@ -59,7 +59,25 @@ class NetworkInterceptActivity : AppCompatActivity() {
     fun DoPinning()
     {
         GlobalScope.launch {
+            val url="owasp.org"
+            try {
+                val pinner1 = CertificatePinner.Builder()
+                    .add(url, "sha256/gdU/UHClHJBFbIdeKuyHm/Lq/aQvMLyuTtcvTEE/1JQ=")
+                    .add(url, "sha256/YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=")
+                    .add(url, "sha256/Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=")
+                    .build()
+                val client = OkHttpClient.Builder().certificatePinner(pinner1).build()
+                val request = Request.Builder()
+                    .url("https://"+url)
+                    .build()
+                //Toast.makeText(this@TrafficActivity, "Request Sent to https://"+url, Toast.LENGTH_LONG).show()
+                val response = client.newCall(request).execute()
+                Log.v("Response", response.body?.string().toString())
 
+            } catch (e: Exception) {
+                //Toast.makeText(this@TrafficActivity, "Pinning Verification Failed", Toast.LENGTH_LONG).show()
+                e.printStackTrace()
+            }
         }
     }
 }
