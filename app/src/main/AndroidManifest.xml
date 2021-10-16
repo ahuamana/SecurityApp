@@ -9,6 +9,7 @@
         android:icon="@mipmap/ic_launcher_paparazzi"
         android:roundIcon="@mipmap/ic_launcher_paparazzi_round"
         android:supportsRtl="true"
+        android:label="Paparazzi Apps"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.Securityapp">
         <activity

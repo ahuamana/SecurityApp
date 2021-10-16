@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.paparazziapps.securityapp.databinding.ActivityNetworkInterceptBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.*
 import java.io.IOException
 
@@ -34,6 +37,10 @@ class NetworkInterceptActivity : AppCompatActivity() {
             run(httpsurl)
         }
 
+        binding.sslpinning.setOnClickListener {
+            DoPinning()
+        }
+
 
     }
 
@@ -59,23 +66,43 @@ class NetworkInterceptActivity : AppCompatActivity() {
     fun DoPinning()
     {
         GlobalScope.launch {
-            val url="owasp.org"
+
+
+            Log.e("","");
+            val url="publicobject.com"
             try {
                 val pinner1 = CertificatePinner.Builder()
-                    .add(url, "sha256/gdU/UHClHJBFbIdeKuyHm/Lq/aQvMLyuTtcvTEE/1JQ=")
-                    .add(url, "sha256/YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=")
-                    .add(url, "sha256/Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=")
+                    //.add(url, "sha256/afwiKY3RxoMmLkuRW1l7QsPZTJPwDS2pdDROQjXw8ig=")
+                    ///.add(url, "sha256/klO23nT2ehFDXCfx3eHTDRESMz3asj1muO+4aIdjiuY=")
+                    //.add(url, "sha256/grX4Ta9HpZx6tSHkmCrvpApTQGo67CYDnvprLg5yRME=")
+                    //.add(url, "sha256/lCppFqbkrlJ3EcVFAkeip0+44VaoJUymbnOaEUk7tEU=")
+                    .add(url, "sha256/H3sch2f+3L8dM+uI9sfolKusjA0yafQYcedt2SRXlHI=") //publicobject.com certificate
+                    .add(url, "sha256/jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0=") //publicobject.com certificate
+                    .add(url, "sha256/C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=") //publicobject.com certificate
+
+                    //.add(url, "sha256/uuYzyn6lbIA+wqiyvV3cFrc2rFVDDECzw78RLQYREQI=") //MitmProxy certificate
+                    //.add(url,"sha256/x+PyaKCXWRo103xoHt1L8vig4+E5PabkaA8fE2l1Atc=") //Fiddler Certificado
                     .build()
                 val client = OkHttpClient.Builder().certificatePinner(pinner1).build()
                 val request = Request.Builder()
                     .url("https://"+url)
                     .build()
-                //Toast.makeText(this@TrafficActivity, "Request Sent to https://"+url, Toast.LENGTH_LONG).show()
+
+                withContext(Dispatchers.Main){
+                    Toast.makeText(this@NetworkInterceptActivity, "Solicitud enviada a https://"+url, Toast.LENGTH_LONG).show()
+                }
+
+
+
                 val response = client.newCall(request).execute()
                 Log.v("Response", response.body?.string().toString())
 
             } catch (e: Exception) {
-                //Toast.makeText(this@TrafficActivity, "Pinning Verification Failed", Toast.LENGTH_LONG).show()
+
+                withContext(Dispatchers.Main){
+                    Toast.makeText(this@NetworkInterceptActivity, "Pinning Verification Error", Toast.LENGTH_LONG).show()
+                }
+
                 e.printStackTrace()
             }
         }
