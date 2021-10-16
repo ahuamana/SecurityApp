@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PaparazziApps</string>
+    <string name="objectives_NetworkIntercept"> <b> Objetivos</b>
+        <br/>\n1.Intercepta Traffico HTTP
+        <br/>\n2.Intercepta Traffico HTTPS
+        <br/>\n3.Salta el SSL Pinning (Certificate Pinning) </string>
 </resources>
