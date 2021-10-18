@@ -54,7 +54,7 @@ class NetworkInterceptActivity : AppCompatActivity() {
 
             client.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {}
-                override fun onResponse(call: Call, response: Response) = println(response.body?.string())
+                override fun onResponse(call: Call, response: Response) = println(response.body()?.string())
             })
         }
         catch (e:Exception)
@@ -67,26 +67,20 @@ class NetworkInterceptActivity : AppCompatActivity() {
     {
         GlobalScope.launch {
 
-
-            Log.e("","");
-            val url="publicobject.com"
+            val url="owasp.org"
             try {
                 val pinner1 = CertificatePinner.Builder()
-                    //.add(url, "sha256/afwiKY3RxoMmLkuRW1l7QsPZTJPwDS2pdDROQjXw8ig=")
-                    ///.add(url, "sha256/klO23nT2ehFDXCfx3eHTDRESMz3asj1muO+4aIdjiuY=")
-                    //.add(url, "sha256/grX4Ta9HpZx6tSHkmCrvpApTQGo67CYDnvprLg5yRME=")
-                    //.add(url, "sha256/lCppFqbkrlJ3EcVFAkeip0+44VaoJUymbnOaEUk7tEU=")
-                    .add(url, "sha256/H3sch2f+3L8dM+uI9sfolKusjA0yafQYcedt2SRXlHI=") //publicobject.com certificate
-                    .add(url, "sha256/jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0=") //publicobject.com certificate
-                    .add(url, "sha256/C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=") //publicobject.com certificate
-
-                    //.add(url, "sha256/uuYzyn6lbIA+wqiyvV3cFrc2rFVDDECzw78RLQYREQI=") //MitmProxy certificate
-                    //.add(url,"sha256/x+PyaKCXWRo103xoHt1L8vig4+E5PabkaA8fE2l1Atc=") //Fiddler Certificado
+                    .add(url, "sha256/gdU/UHClHJBFbIdeKuyHm/Lq/aQvMLyuTtcvTEE/1JQ=")
+                    .add(url, "sha256/YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=")
+                    .add(url, "sha256/Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=")
                     .build()
                 val client = OkHttpClient.Builder().certificatePinner(pinner1).build()
                 val request = Request.Builder()
                     .url("https://"+url)
                     .build()
+
+
+
 
                 withContext(Dispatchers.Main){
                     Toast.makeText(this@NetworkInterceptActivity, "Solicitud enviada a https://"+url, Toast.LENGTH_LONG).show()
@@ -95,7 +89,7 @@ class NetworkInterceptActivity : AppCompatActivity() {
 
 
                 val response = client.newCall(request).execute()
-                Log.v("Response", response.body?.string().toString())
+                Log.v("Response", response.body()?.string().toString())
 
             } catch (e: Exception) {
 

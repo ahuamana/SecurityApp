@@ -7,3 +7,11 @@
         </trust-anchors>
     </base-config>
 </network-security-config>
+
+    <!-- <domain-config>
+              <domain includeSubdomains="true">owasp.org</domain>
+              <pin-set expiration="2020-01-01">
+                  <pin digest="SHA-256">gdU/UHClHJBFbIdeKuyHm/Lq/aQvMLyuTtcvTEE/1JQ=</pin>
+                  <pin digest="SHA-256">YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=</pin>
+              </pin-set>
+          </domain-config>-->
