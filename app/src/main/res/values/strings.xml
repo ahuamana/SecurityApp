@@ -4,4 +4,7 @@
         <br/>\n1.Intercepta Traffico HTTP
         <br/>\n2.Intercepta Traffico HTTPS
         <br/>\n3.Salta el SSL Pinning (Certificate Pinning) </string>
+
+    <string name="WelcomeText"><b>Paparazzi Apps - Security app</b> es una aplicación insegura vulnerable de código abierto desarrollada a propósito utilizando Kotlin.<br/> <br/>Testers, Profesionales entusiastas, Desarrolladores ... etc. Puede utilizar esta aplicación para comprender y defender las vulnerabilidades en la plataforma Android. Esta es la primera aplicación vulnerable desarrollada con Kotlin. <br/> <br/>Si está buscando aprender las pruebas de seguridad de aplicaciones de Android, PaparazziApps es la solución perfecta. <br/> <br/> ***<b>Feliz Aprendizaje</b>***\n \n</string>
+
 </resources>

@@ -3,9 +3,7 @@ package com.paparazziapps.securityapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import com.paparazziapps.securityapp.databinding.ActivityMainBinding
-import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity() {
 

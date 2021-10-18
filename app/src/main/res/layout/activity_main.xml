@@ -13,6 +13,11 @@
         android:padding="15dp"
         android:layout_height="match_parent">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:text="@string/WelcomeText"
+            android:layout_height="wrap_content"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/networkIntercept"
             android:layout_width="match_parent"
