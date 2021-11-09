@@ -1,4 +1,5 @@
-PAPARAZZI APPS - SECURITY APPS
+PAPARAZZIAPPS [SECURITY APP]
+======================
 
 Esta aplicación fue desarrollada con fines educativos y dar a conocer la detección de vulnerabilidades y defectos de las aplicaciones móviles
 
