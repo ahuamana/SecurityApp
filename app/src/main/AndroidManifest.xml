@@ -29,6 +29,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="PaparazziApps - insecure app"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3448457351810220~4995144600"/>
+
+
     </application>
 
 </manifest>

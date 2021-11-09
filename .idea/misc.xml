@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/drawable/custom_buttom.xml" value="0.3828125" />
+        <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/drawable/custom_buttomImage.xml" value="0.3828125" />
+        <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/drawable/custom_buttom_image.xml" value="0.3828125" />
+        <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/layout/activity_network_intercept.xml" value="0.36666666666666664" />
         <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Antony/Desarrollo/Android/KotlinProjects/securityapp2/app/src/main/res/xml/network_security_config.xml" value="0.36666666666666664" />

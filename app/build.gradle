@@ -10,8 +10,8 @@ android {
         applicationId "com.paparazziapps.securityapp"
         minSdk 21
         targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -53,4 +53,6 @@ dependencies {
 
     //
     implementation "org.jetbrains.anko:anko-commons:0.10.4"
+
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
 }
