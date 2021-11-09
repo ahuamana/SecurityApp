@@ -4,4 +4,4 @@ Esta aplicación fue desarrollada con fines educativos y dar a conocer la detecc
 
 Descarga el apk desde aqui: 
 
-https://github.com/ahuamana/SecurityApp/releases/download/1.3/PaparazziApps.-.Security.app.apk
+https://github.com/ahuamana/SecurityApp/releases/download/1.4/PaparazzyApps.-.SecurityApp.apk
